@@ -36,7 +36,9 @@ uvicorn app.main:app --reload --port 8000
 ### 로컬 머신에서 k8s를 사용하여 서버 실행하기
 
 ```
+# iam-access-key-organizer/k8s 디렉토리로 들어가기
 cd k8s
+
 kubectl apply -f .
 ```
 
@@ -46,6 +48,15 @@ k8s가 port forwading한 port를 사용하여 아래의 같은 endpoint(`/find`)
 
 예시:
 `http://localhost::<PORT>/find?age_hours=<int>`
+
+
+### 테스트 코드 실행하기
+```
+# iam-access-key-organizer/app 디렉토리로 들어가기
+cd app
+
+python -m unittest tests
+```
 
 ### IAM Access Key Organizer API Documentation
 
